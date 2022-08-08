@@ -8,24 +8,28 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ChatRoomFormController">
+<AnchorPane fx:id="chatRoomContext" prefHeight="392.0" prefWidth="322.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ChatRoomFormController">
    <children>
-      <Label prefHeight="33.0" prefWidth="600.0" style="-fx-background-color: #95a5a6;" text=" Chat Room">
+      <Label prefHeight="33.0" prefWidth="322.0" style="-fx-background-color: #95a5a6;" text=" Chat Room">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <JFXTextArea layoutX="39.0" layoutY="69.0" prefHeight="416.0" prefWidth="487.0" style="-fx-background-color: #ecf0f1;" />
-      <JFXTextField layoutX="39.0" layoutY="518.0" prefHeight="25.0" prefWidth="411.0" style="-fx-background-color: #95a5a6; -fx-border-color: black;">
+      <JFXTextArea fx:id="txTextArea" layoutX="36.0" layoutY="60.0" prefHeight="273.0" prefWidth="251.0" style="-fx-background-color: #ecf0f1;" />
+      <JFXTextField fx:id="txtMessage" layoutX="36.0" layoutY="347.0" prefHeight="11.0" prefWidth="187.0" style="-fx-background-color: #95a5a6; -fx-border-color: black;">
          <effect>
             <Glow />
          </effect>
       </JFXTextField>
-      <JFXButton layoutX="466.0" layoutY="517.0" prefHeight="27.0" prefWidth="57.0" style="-fx-background-color: #0984e3;" text="Send" textFill="#eedfdf">
+      <JFXButton layoutX="230.0" layoutY="345.0" onAction="#btnSendOnAction" prefHeight="27.0" prefWidth="57.0" style="-fx-background-color: #0984e3;" text="Send" textFill="#eedfdf">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXButton>
+      <Label fx:id="lblName" layoutX="223.0" layoutY="8.0" prefHeight="17.0" prefWidth="84.0" text="User">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
