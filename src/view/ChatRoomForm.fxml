@@ -16,7 +16,7 @@
          </font>
       </Label>
       <JFXTextArea fx:id="txTextArea" layoutX="36.0" layoutY="60.0" prefHeight="273.0" prefWidth="251.0" style="-fx-background-color: #ecf0f1;" />
-      <JFXTextField fx:id="txtMessage" layoutX="36.0" layoutY="347.0" prefHeight="11.0" prefWidth="187.0" style="-fx-background-color: #95a5a6; -fx-border-color: black;">
+      <JFXTextField fx:id="txtMessage" layoutX="36.0" layoutY="347.0" prefHeight="11.0" prefWidth="187.0" promptText="Type a message" style="-fx-background-color: #95a5a6; -fx-border-color: black;">
          <effect>
             <Glow />
          </effect>
