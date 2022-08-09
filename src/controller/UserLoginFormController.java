@@ -15,7 +15,10 @@ public class UserLoginFormController {
     public AnchorPane logInContext;
     public JFXTextField txtUserName;
 
+    static String userName;
+
     public void btnLogInOnAction(ActionEvent actionEvent) throws IOException {
+        userName=txtUserName.getText();
         Stage stage = (Stage) txtUserName.getScene().getWindow();
         stage.close();
         Stage stage1=new Stage();
