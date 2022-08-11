@@ -30,7 +30,7 @@ public class UserLoginFormController {
             stage1.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/ChatRoomForm.fxml"))));
             stage1.setResizable(false);
             //primaryStage.getIcons().add(new Image("location"));
-            stage1.setTitle("sample title");
+            stage1.setTitle(userName);
             stage1.centerOnScreen();
             stage1.show();
         }
