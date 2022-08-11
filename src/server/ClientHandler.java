@@ -1,9 +1,6 @@
 package server;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.Socket;
 import java.util.ArrayList;
 
@@ -13,12 +10,16 @@ public class ClientHandler extends Thread{
     private BufferedReader reader;
     private PrintWriter writer;
 
+    ObjectOutputStream oos = null;
+    ObjectInputStream ois = null;
+
     public ClientHandler(Socket socket, ArrayList<ClientHandler> clients) {
         try {
             this.socket = socket;
             this.clients = clients;
             this.reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             this.writer = new PrintWriter(socket.getOutputStream(), true);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -28,7 +29,7 @@ public class ClientHandler extends Thread{
             String msg;
             while ((msg = reader.readLine()) != null) {
                 if (msg.equalsIgnoreCase( "exit")) {
-                    break;
+                    return;
                 }
                 for (ClientHandler cl : clients) {
                     cl.writer.println(msg);
