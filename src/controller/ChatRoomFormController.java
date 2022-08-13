@@ -73,15 +73,12 @@ public class ChatRoomFormController extends Thread{
                 String[] tokens = msg.split(" ");
                 String cmd = tokens[0];
 
-//                txtTextArea.appendText(cmd+"\n");
+
                 StringBuilder fullMsg = new StringBuilder();
                 for (int i = 1; i < tokens.length; i++) {
                     fullMsg.append(tokens[i]+" ");
                 }
 
-                System.out.println(msg);
-                System.out.println(fullMsg);
-                System.out.println(cmd);
 
                 String[] msgToAr = msg.split(" ");
                 String st = "";
