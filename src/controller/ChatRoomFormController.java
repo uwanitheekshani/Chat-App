@@ -6,6 +6,7 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.geometry.NodeOrientation;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
@@ -16,6 +17,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
@@ -67,7 +69,6 @@ public class ChatRoomFormController extends Thread{
         try {
             while (true) {
 
-
                 String msg = reader.readLine();
                 String[] tokens = msg.split(" ");
                 String cmd = tokens[0];
@@ -75,9 +76,12 @@ public class ChatRoomFormController extends Thread{
 //                txtTextArea.appendText(cmd+"\n");
                 StringBuilder fullMsg = new StringBuilder();
                 for (int i = 1; i < tokens.length; i++) {
-                    fullMsg.append(tokens[i]);
+                    fullMsg.append(tokens[i]+" ");
                 }
 
+                System.out.println(msg);
+                System.out.println(fullMsg);
+                System.out.println(cmd);
 
                 String[] msgToAr = msg.split(" ");
                 String st = "";
@@ -138,9 +142,7 @@ public class ChatRoomFormController extends Thread{
 
 
                 } else {
-                    //For the Text
-//                    text.setFill(Color.WHITE);
-                 //   text.getStyleClass().add("message");
+
                     TextFlow tempFlow = new TextFlow();
 
                     if (!cmd.equalsIgnoreCase(lblName.getText() + ":")) {
@@ -161,22 +163,18 @@ public class ChatRoomFormController extends Thread{
 
                     if (!cmd.equalsIgnoreCase(lblName.getText() + ":")) {
 
-                      //  tempFlow.getStyleClass().add("tempFlowFlipped");
-                      //  flow.getStyleClass().add("textFlowFlipped");
                         vBox.setAlignment(Pos.TOP_LEFT);
                         hBox.setAlignment(Pos.CENTER_LEFT);
                         hBox.getChildren().add(flow);
 
                     } else {
-                       // text.setFill(Color.WHITE);
-                       // tempFlow.getStyleClass().add("tempFlow");
-                       // flow.getStyleClass().add("textFlow");
+
                         Text text2=new Text(fullMsg+":Me");
                         TextFlow flow2 = new TextFlow(text2);
                         hBox.setAlignment(Pos.BOTTOM_RIGHT);
                         hBox.getChildren().add(flow2);
                     }
-                  //  hBox.getStyleClass().add("hbox");
+
                     Platform.runLater(() -> vBox.getChildren().addAll(hBox));
                 }
 
@@ -189,22 +187,6 @@ public class ChatRoomFormController extends Thread{
     }
 
 
-//    public void btnGoOnAction(ActionEvent actionEvent) {
-//        txtUserName.setText(txtNicName.getText().trim());
-//        pnePopUp.setVisible(false);
-//        apnChatForm.setVisible(true);
-//    }
-//
-//    public void AddClientOnAction(MouseEvent mouseEvent) throws IOException {
-//        Stage stage=new Stage();
-//        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/ChatForm.fxml"))));
-//        stage.setResizable(false);
-//        //primaryStage.getIcons().add(new Image("location"));
-//        stage.setTitle("sample title");
-//        stage.centerOnScreen();
-//        stage.show();
-//
-//    }
 
 
     public void btnSendOnAction(ActionEvent actionEvent) {
@@ -223,6 +205,7 @@ public class ChatRoomFormController extends Thread{
             System.exit(0);
 
         }
+
     }
 
 

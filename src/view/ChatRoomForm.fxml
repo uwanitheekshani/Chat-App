@@ -30,7 +30,7 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXButton>
-      <Label fx:id="lblName" layoutX="323.0" layoutY="6.0" prefHeight="21.0" prefWidth="43.0" text="User">
+      <Label fx:id="lblName" layoutX="291.0" layoutY="6.0" prefHeight="21.0" prefWidth="76.0" text="User">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -53,7 +53,7 @@
             <VBox fx:id="vBox" prefHeight="324.0" prefWidth="338.0" />
         </content>
       </ScrollPane>
-      <ImageView fitHeight="21.0" fitWidth="25.0" layoutX="284.0" layoutY="6.0" pickOnBounds="true">
+      <ImageView fitHeight="21.0" fitWidth="25.0" layoutX="259.0" layoutY="6.0" pickOnBounds="true">
          <image>
             <Image url="@../asset/phone-receiver-silhouette.png" />
          </image>
